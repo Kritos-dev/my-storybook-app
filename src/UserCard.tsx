@@ -1,15 +1,22 @@
 import React from 'react';
 
-// Definizione dell'interfaccia per le props del componente UserCard
-// name: nome dell'utente da visualizzare
-// email: indirizzo email dell'utente da visualizzare
+/**
+ * @interface UserCardProps
+ * @description Interfaccia che definisce le proprietà del componente UserCard
+ * @property {string} name - Nome dell'utente da visualizzare
+ * @property {string} email - Indirizzo email dell'utente da visualizzare
+ */
 type UserCardProps = {
     name: string;
     email: string;
 };
 
-// Componente UserCard che accetta name e email come props
-// React.FC<UserCardProps> indica che è un Functional Component con props di tipo UserCardProps
+/**
+ * @component UserCard
+ * @description Componente che renderizza una card con le informazioni dell'utente
+ * @param {UserCardProps} props - Proprietà del componente
+ * @returns {JSX.Element} Card contenente nome e email dell'utente
+ */
 export const UserCard: React.FC<UserCardProps> = ({name, email}) => {
     // Rendering di una card contenente le informazioni dell'utente
     // Lo stile applica un bordo, padding e colore di sfondo

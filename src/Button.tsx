@@ -1,16 +1,23 @@
 // Importazione della libreria React necessaria per i componenti
 import React from "react"
 
-// Definizione dell'interfaccia per le props del componente Button
-// label: testo da visualizzare sul pulsante
-// onClick: funzione da eseguire quando il pulsante viene cliccato
+/**
+ * @interface ButtonProps
+ * @description Interfaccia che definisce le proprietà del componente Button
+ * @property {string} label - Testo da visualizzare sul pulsante
+ * @property {() => void} onClick - Funzione da eseguire quando il pulsante viene cliccato
+ */
 type ButtonProps = {
     label: string;
     onClick: () => void;
 };
 
-// Componente Button che accetta label e onClick come props
-// React.FC<ButtonProps> indica che è un Functional Component con props di tipo ButtonProps
+/**
+ * @component Button
+ * @description Componente che renderizza un pulsante cliccabile
+ * @param {ButtonProps} props - Proprietà del componente
+ * @returns {JSX.Element} Elemento button con label e gestore click
+ */
 export const Button: React.FC<ButtonProps> = ({ label, onClick}) => {
     // Rendering di un elemento button HTML con le props passate
     return <button onClick={onClick}>{label}</button>
